@@ -1,5 +1,6 @@
 'use client';
 
+import axios from "axios";
 import { useCallback, useState } from "react";
 import { FieldValues,
     SubmitHandler,
@@ -9,6 +10,7 @@ import Input from "./inputs/Input";
 import Button from "./Button";
 import AuthSocialButton from "./AuthSocialButton";
 import { BsGithub, BsGoogle } from "react-icons/bs";
+
 
 type Variant = 'LOGIN | REGISTER';
 
@@ -42,7 +44,7 @@ if(variant === 'LOGIN') {
         setIsLoading(true);
 
         if (variant === 'REGISTER') {
-            //axios register
+            axios.post('/api/register', data)
         }
 
         if (variant === 'LOGIN') {
