@@ -2,7 +2,8 @@
 
 import axios from "axios";
 import { useCallback, useState } from "react";
-import { FieldValues,
+import { 
+    FieldValues,
     SubmitHandler,
     useForm
 } from "react-hook-form";
@@ -12,10 +13,10 @@ import AuthSocialButton from "./AuthSocialButton";
 import { BsGithub, BsGoogle } from "react-icons/bs";
 
 
-type Variant = 'LOGIN | REGISTER';
+type Variant = 'LOGIN' | 'REGISTER';
 
 const AuthForm = () => {
-    const [variant, setVariant] = useState <variant>('LOGIN');
+    const [variant, setVariant] = useState <Variant>('LOGIN');
     const [isLoading, setIsLoading] = useState(false);
     
     const toggleVariant = useCallback(() => {
